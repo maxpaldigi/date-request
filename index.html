@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A very serious six-step date proposal. The no button is not a real option.">
+<meta name="theme-color" content="#D94A72">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Will you go on a date with me?">
+<meta property="og:description" content="Six steps. One acceptable answer. Please open this on your phone.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8C%3C/text%3E%3C/svg%3E">
+<style>
+  /* baseline the Artifact host normally provides */
+  :root{ color-scheme: light; }
+  html,body{ margin:0; }
+  body{ font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size:14px; }
+  img{ max-width:100%; }
+  [hidden]{ display:none !important; }
+</style>
+</head>
+<body>
+<title>Will You Go On A Date With Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --ground:#F8ECEF; --ground-2:#EFDCE2;
+    --card:#FFFDFC; --card-2:#FBF1F3;
+    --ink:#3E1330; --ink-soft:#94707F; --line:#EFDAE0;
+    --rose:#D94A72; --on-rose:#FFFFFF;
+    --lilac:#8E6ED0; --on-lilac:#FFFFFF;
+    --gold:#B4801F;
+    --shadow: 0 1px 2px rgba(62,19,48,.05), 0 18px 48px -22px rgba(62,19,48,.35);
+    --display:"Fraunces", Georgia, "Times New Roman", serif;
+    --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono:"Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --ground:#1B0E19; --ground-2:#140A13;
+      --card:#2A1626; --card-2:#331B2E;
+      --ink:#FDEAF0; --ink-soft:#B78FA2; --line:#412640;
+      --rose:#FF6E96; --on-rose:#2A0716;
+      --lilac:#B79AF0; --on-lilac:#25103D;
+      --gold:#E3B45E;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 24px 60px -24px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --ground:#1B0E19; --ground-2:#140A13;
+    --card:#2A1626; --card-2:#331B2E;
+    --ink:#FDEAF0; --ink-soft:#B78FA2; --line:#412640;
+    --rose:#FF6E96; --on-rose:#2A0716;
+    --lilac:#B79AF0; --on-lilac:#25103D;
+    --gold:#E3B45E;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 24px 60px -24px rgba(0,0,0,.8);
+  }
+
+  body{
+    background:
+      radial-gradient(120% 90% at 50% -10%, var(--card-2) 0%, transparent 60%),
+      linear-gradient(175deg, var(--ground) 0%, var(--ground-2) 100%);
+    color: var(--ink); font-family: var(--body);
+    min-height: 100svh; display: grid; place-items: start center;
+    padding: 24px 16px 40px; box-sizing: border-box;
+  }
+  *,*::before,*::after{ box-sizing: inherit; }
+
+  .hearts-bg{ position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+  .hearts-bg span{ position: absolute; color: var(--rose); opacity:.14; font-size:14px; animation: drift 14s linear infinite; }
+  @keyframes drift{ from{ transform: translateY(8vh) rotate(-8deg);} to{ transform: translateY(-104vh) rotate(12deg);} }
+
+  .card{
+    position: relative; z-index:1; width:100%; max-width:460px;
+    background: var(--card); border:1px solid var(--line); border-radius:22px;
+    box-shadow: var(--shadow); overflow: hidden;
+  }
+
+  .titlebar{
+    display:flex; align-items:center; gap:8px; padding:10px 12px 10px 14px;
+    background: var(--card-2); border-bottom:1px solid var(--line);
+    font-family: var(--mono); font-size:11px; letter-spacing:.04em; color: var(--ink-soft);
+  }
+  .dot{ width:9px;height:9px;border-radius:50%;background:var(--rose);opacity:.55;flex:none; }
+  .dot.b{ background: var(--lilac);} .dot.c{ background: var(--gold);}
+  .titlebar .file{ margin-left:4px; color: var(--ink);}
+  .sound{
+    margin-left:auto; background:transparent; border:1px solid var(--line); color:var(--ink-soft);
+    font-family:var(--mono); font-size:11px; border-radius:999px; padding:4px 10px; cursor:pointer;
+  }
+  .sound:hover{ color: var(--ink); border-color: var(--ink-soft); }
+
+  .rail{ display:flex; gap:5px; padding:14px 24px 0; }
+  .rail i{ flex:1; height:3px; border-radius:2px; background:var(--line); transition: background .35s ease; }
+  .rail i.on{ background: var(--rose); }
+  .stepno{ padding:9px 24px 0; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+
+  .stage{ padding:14px 24px 26px; min-height:430px; display:flex; flex-direction:column; }
+  .step{ display:flex; flex-direction:column; flex:1; animation: rise .42s cubic-bezier(.2,.75,.3,1) both; }
+  @keyframes rise{ from{ opacity:0; transform: translateY(10px);} to{ opacity:1; transform:none;} }
+
+  /* pet */
+  .petwrap{ position:relative; display:flex; justify-content:center; margin-top:8px; }
+  .tile{
+    width:74px;height:74px;border-radius:18px; display:grid;place-items:center;
+    font-size:38px;line-height:1; background:var(--card-2); border:1px solid var(--line);
+    margin:10px auto 0;
+  }
+  button.tile{ cursor:pointer; padding:0; font-family:inherit; transition: transform .2s cubic-bezier(.3,1.5,.5,1); }
+  button.tile:hover{ transform: translateY(-3px) rotate(-3deg); }
+  .tile.alarm{ background: var(--rose); border-color: var(--rose); }
+  @keyframes wiggle{ 0%,100%{transform:rotate(0)} 25%{transform:rotate(-11deg) scale(1.07)} 75%{transform:rotate(11deg) scale(1.07)} }
+  .tile.wiggle{ animation: wiggle .4s ease; }
+  .bubble{
+    position:absolute; bottom:calc(100% - 2px); left:50%; transform:translateX(-50%);
+    background:var(--ink); color:var(--card); font-size:12px; line-height:1.35; font-family:var(--body);
+    padding:8px 12px; border-radius:12px; width:max-content; max-width:230px; text-align:center;
+    opacity:0; transition: opacity .2s ease, transform .2s ease; pointer-events:none;
+  }
+  .bubble::after{ content:""; position:absolute; top:100%; left:50%; margin-left:-5px; border:5px solid transparent; border-top-color:var(--ink); }
+  .bubble.show{ opacity:1; transform:translateX(-50%) translateY(-6px); }
+
+  h1{ font-family:var(--display); font-weight:900; font-size:clamp(1.55rem,6.2vw,2rem); line-height:1.08;
+      letter-spacing:-.015em; text-align:center; text-wrap:balance; margin:16px 0 0; color:var(--ink); }
+  h1.shout{ text-transform:uppercase; }
+  .sub{ text-align:center; color:var(--ink-soft); font-size:.92rem; line-height:1.5; margin:10px auto 0; max-width:34ch; text-wrap:balance; }
+  .label{ font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); display:block; margin-bottom:7px; }
+  .spacer{ flex:1; min-height:14px; }
+
+  .btn{
+    font-family:var(--body); font-weight:600; font-size:1rem; border:none; border-radius:999px;
+    padding:15px 26px; cursor:pointer; background:var(--rose); color:var(--on-rose);
+    transition: transform .18s cubic-bezier(.3,1.4,.5,1), filter .18s ease, opacity .25s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:hover{ filter:brightness(1.07); }
+  .btn:active{ transform:scale(.97); }
+  .btn:disabled{ opacity:.4; cursor:not-allowed; filter:none; }
+  .btn.wide{ width:100%; }
+  .btn.ghost{ background:transparent; color:var(--ink-soft); font-family:var(--mono); font-size:12px; padding:10px; }
+  :where(button,input,select,a):focus-visible{ outline:2px solid var(--lilac); outline-offset:3px; }
+
+  .playfield{ position:relative; display:flex; justify-content:center; align-items:center; gap:14px; margin-top:20px; min-height:152px; }
+  #yesBtn{ transform-origin:center; transition: transform .3s cubic-bezier(.3,1.5,.5,1), filter .18s ease; }
+  #noBtn{
+    background:var(--lilac); color:var(--on-lilac); white-space:nowrap; transform-origin:center;
+    transition: transform .26s cubic-bezier(.34,1.3,.5,1), opacity .3s ease, filter .18s ease;
+  }
+  /* readable escape: spring easing, short hops - motion reads as cause -> effect */
+  #noBtn.loose{
+    position:absolute; margin:0;
+    transition: left .34s cubic-bezier(.34,1.22,.5,1), top .34s cubic-bezier(.34,1.22,.5,1),
+                transform .26s cubic-bezier(.34,1.3,.5,1), opacity .35s ease;
+  }
+  #noBtn.poof{ opacity:0; transform:scale(.25) rotate(20deg); }
+  .hint{ font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); text-align:center; margin:14px 0 0; letter-spacing:.03em; }
+
+  /* slider */
+  input[type="range"]{
+    -webkit-appearance:none; appearance:none; width:100%; height:9px; border-radius:999px; margin:0;
+    background: linear-gradient(to right, var(--rose) var(--pct,0%), var(--line) var(--pct,0%));
+    cursor:grab; touch-action:none;
+  }
+  input[type="range"]:active{ cursor:grabbing; }
+  input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:30px;height:30px;border-radius:50%;
+    background:var(--card); border:3px solid var(--rose); box-shadow:0 3px 10px rgba(0,0,0,.18); cursor:grab;
+  }
+  input[type="range"]::-moz-range-thumb{
+    width:24px;height:24px;border-radius:50%; background:var(--card); border:3px solid var(--rose); cursor:grab;
+  }
+  .gauge{ font-family:var(--display); font-weight:900; font-size:3.1rem; text-align:center; color:var(--rose); font-variant-numeric:tabular-nums; line-height:1; margin:18px 0 4px; }
+  .gauge-note{ font-family:var(--mono); font-size:11px; text-align:center; color:var(--ink-soft); min-height:16px; letter-spacing:.03em; margin-bottom:16px; }
+
+  /* chips */
+  .chips{ display:flex; flex-wrap:wrap; gap:7px; margin-top:4px; }
+  .chip{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.02em; padding:8px 13px; border-radius:999px;
+    border:1.5px solid var(--line); background:var(--card-2); color:var(--ink); cursor:pointer; transition:.16s ease;
+  }
+  .chip:hover{ border-color:var(--rose); transform:translateY(-1px); }
+  .chip[aria-pressed="true"]{ border-color:var(--rose); background:var(--rose); color:var(--on-rose); }
+  .readout{ font-family:var(--mono); font-size:11.5px; color:var(--rose); text-align:center; margin:16px 0 0; min-height:17px; letter-spacing:.02em; }
+
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:9px; margin-top:18px; }
+  .vibe{
+    background:var(--card-2); border:1.5px solid var(--line); border-radius:15px; padding:14px 6px 11px;
+    cursor:pointer; font-family:var(--body); font-size:.8rem; color:var(--ink);
+    display:grid; gap:7px; justify-items:center; transition:border-color .18s ease, transform .18s ease, background .18s ease;
+  }
+  .vibe em{ font-size:26px; font-style:normal; line-height:1; transition:transform .18s ease; }
+  .vibe:hover{ transform:translateY(-2px); }
+  .vibe:hover em{ transform:scale(1.18) rotate(-6deg); }
+  .vibe[aria-pressed="true"]{ border-color:var(--rose); background:var(--card); }
+  .vibe.lit{ border-color:var(--lilac); background:var(--card); transform:scale(1.06); }
+
+  .field{ margin-top:18px; }
+  input[type="date"], select{
+    width:100%; font-family:var(--body); font-size:1rem; color:var(--ink); background:var(--card-2);
+    border:1.5px solid var(--line); border-radius:13px; padding:14px 15px; appearance:none; -webkit-appearance:none;
+  }
+  input[type="date"]:focus, select:focus{ border-color:var(--rose); outline:none; }
+  .select-wrap{ position:relative; }
+  .select-wrap::after{
+    content:""; position:absolute; right:18px; top:50%; width:8px;height:8px;
+    border-right:2px solid var(--ink-soft); border-bottom:2px solid var(--ink-soft);
+    transform:translateY(-70%) rotate(45deg); pointer-events:none;
+  }
+
+  .invoice{ margin-top:18px; background:var(--card-2); border:1px solid var(--line); border-radius:15px; padding:16px 17px; }
+  .invoice .row{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+  .invoice .name{ font-family:var(--display); font-weight:600; font-size:1.05rem; }
+  .invoice .price{ font-family:var(--mono); font-weight:700; font-size:1.35rem; color:var(--rose); font-variant-numeric:tabular-nums; }
+  .invoice .fine{ font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin-top:8px; letter-spacing:.02em; }
+  .payfield{ position:relative; margin-top:14px; min-height:54px; }
+  #payBtn.loose{ position:absolute; transition:left .16s ease-out, top .16s ease-out; }
+
+  .receipt{ position:relative; margin-top:16px; background:var(--card-2); border:1px solid var(--line); border-radius:15px; padding:17px; font-family:var(--mono); font-size:12.5px; }
+  .receipt .head{ display:flex; justify-content:space-between; align-items:center; font-weight:700; letter-spacing:.06em; font-size:11px; text-transform:uppercase; color:var(--gold); border-bottom:1px dashed var(--line); padding-bottom:10px; }
+  .receipt dl{ margin:12px 0 0; display:grid; grid-template-columns:74px 1fr; gap:7px 10px; }
+  .receipt dt{ color:var(--ink-soft); letter-spacing:.05em; font-size:10.5px; text-transform:uppercase; padding-top:1px; }
+  .receipt dd{ margin:0; color:var(--ink); }
+  .receipt .total{ margin-top:13px; padding-top:11px; border-top:1px dashed var(--line); display:flex; justify-content:space-between; font-weight:700; color:var(--rose); text-transform:uppercase; letter-spacing:.05em; font-size:11.5px; }
+  .stamp{
+    position:absolute; right:12px; bottom:8px; border:3px double var(--gold); color:var(--gold);
+    font-weight:700; font-size:11px; letter-spacing:.14em; padding:6px 10px; border-radius:6px;
+    transform:rotate(-14deg) scale(2.4); opacity:0; transition: transform .35s cubic-bezier(.2,1.4,.4,1), opacity .25s ease;
+  }
+  .stamp.on{ opacity:.95; transform:rotate(-14deg) scale(1); }
+
+  .sigbox{ margin-top:16px; }
+  .sigpad{
+    width:100%; height:112px; border:2px dashed var(--line); border-radius:14px; background:var(--card-2);
+    touch-action:none; cursor:crosshair; display:block;
+  }
+  .sigpad.inked{ border-style:solid; border-color:var(--rose); }
+  .sigrow{ display:flex; justify-content:space-between; align-items:center; margin-top:7px; }
+  .sigrow span{ font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); letter-spacing:.04em; }
+  .linkbtn{ background:none; border:none; font-family:var(--mono); font-size:10.5px; color:var(--rose); cursor:pointer; padding:2px 0; letter-spacing:.04em; }
+
+  .ps{ font-family:var(--body); font-style:italic; font-size:.82rem; line-height:1.55; color:var(--ink-soft); text-align:center; margin:14px auto 0; max-width:36ch; }
+  canvas#confetti{ position:fixed; inset:0; pointer-events:none; z-index:5; }
+
+  .footnote{ position:relative; z-index:1; margin-top:14px; font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); text-align:center; letter-spacing:.04em; }
+  .footnote button{ background:none;border:none;font:inherit;color:var(--rose);cursor:pointer;text-decoration:underline; }
+  .maker{
+    position:relative; z-index:1; width:100%; max-width:460px; margin:10px auto 0; background:var(--card);
+    border:1px solid var(--line); border-radius:16px; padding:15px 16px;
+  }
+  .maker .rowx{ display:flex; gap:8px; margin-top:9px; }
+  .maker input{
+    flex:1; min-width:0; font-family:var(--body); font-size:.92rem; color:var(--ink); background:var(--card-2);
+    border:1.5px solid var(--line); border-radius:11px; padding:11px 13px;
+  }
+  .maker input:focus{ border-color:var(--rose); outline:none; }
+  .maker .btn{ padding:11px 16px; font-size:.88rem; }
+
+  @media (prefers-reduced-motion: reduce){
+    .hearts-bg{ display:none; }
+    .step,.btn,.vibe,.tile,.stamp{ animation:none !important; transition:none !important; }
+  }
+  @media (max-width:380px){
+    .stage,.rail,.stepno{ padding-left:18px; padding-right:18px; }
+  }
+</style>
+
+<div class="hearts-bg" id="heartsBg" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<main class="card">
+  <div class="titlebar">
+    <span class="dot" aria-hidden="true"></span><span class="dot b" aria-hidden="true"></span><span class="dot c" aria-hidden="true"></span>
+    <span class="file">date_request.html</span>
+    <button class="sound" id="soundBtn" type="button" aria-pressed="true">sound on</button>
+  </div>
+
+  <div class="rail" id="rail" aria-hidden="true"></div>
+  <p class="stepno" id="stepno">Step 1 of 6 — the hard part</p>
+
+  <div class="stage" id="stage">
+
+    <!-- 1 -->
+    <section class="step" id="step-ask">
+      <div class="petwrap">
+        <div class="bubble" id="bubble">psst. he's been practising this all week.</div>
+        <button class="tile" id="pet" type="button" aria-label="Pet the dog">🐶</button>
+      </div>
+      <h1 id="askTitle">Will you go on a date with me?</h1>
+      <p class="sub" id="askSub">no pressure. (there is some pressure.)</p>
+      <div class="spacer"></div>
+      <div class="playfield" id="playfield">
+        <button class="btn" id="yesBtn">YES ♥</button>
+        <button class="btn" id="noBtn" type="button">no</button>
+      </div>
+      <p class="hint" id="hint">tap the dog — he has opinions</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="step" id="step-yes" hidden>
+      <div class="tile alarm">🧽</div>
+      <h1 class="shout">Wait you actually said yes?? 😭</h1>
+      <p class="sub">I had a whole speech ready for the other answer. Quick check —</p>
+      <div class="gauge" id="gauge">0%</div>
+      <p class="gauge-note" id="gaugeNote">drag it. how sure are you?</p>
+      <input type="range" id="sure" min="0" max="100" value="0" aria-label="How sure are you?">
+      <div class="spacer"></div>
+      <button class="btn wide" id="sureNext" disabled>okay okay! →</button>
+    </section>
+
+    <!-- 3 -->
+    <section class="step" id="step-when" hidden>
+      <div class="tile">📅</div>
+      <h1>So… when are you free?</h1>
+      <div class="field">
+        <span class="label">Quick picks</span>
+        <div class="chips" id="chips">
+          <button class="chip" aria-pressed="false" data-days="0">tonight 😳</button>
+          <button class="chip" aria-pressed="false" data-days="1">tomorrow</button>
+          <button class="chip" aria-pressed="false" data-days="fri">friday</button>
+          <button class="chip" aria-pressed="false" data-days="sat">saturday</button>
+        </div>
+      </div>
+      <div class="field">
+        <span class="label">Or pick a day</span>
+        <input type="date" id="dayInput" aria-label="Pick a day">
+      </div>
+      <div class="field">
+        <span class="label">What time?</span>
+        <div class="select-wrap">
+          <select id="timeInput" aria-label="Pick a time">
+            <option value="">Select a time…</option>
+            <option>5:00 PM</option><option>5:30 PM</option><option>6:00 PM</option>
+            <option>6:30 PM</option><option>7:00 PM</option><option>7:30 PM</option>
+            <option>8:00 PM</option><option>9:00 PM</option>
+            <option>whenever, I'm easy</option>
+          </select>
+        </div>
+      </div>
+      <p class="readout" id="whenRead"></p>
+      <div class="spacer"></div>
+      <button class="btn wide" id="whenNext" disabled>set the date ♥</button>
+    </section>
+
+    <!-- 4 -->
+    <section class="step" id="step-food" hidden>
+      <div class="tile">🍽️</div>
+      <h1>What are we feeling?</h1>
+      <p class="sub">pick your vibe — or let fate do it</p>
+      <div class="grid" id="vibes">
+        <button class="vibe" aria-pressed="false" data-food="Pizza"><em>🍕</em>Pizza</button>
+        <button class="vibe" aria-pressed="false" data-food="Sushi"><em>🍣</em>Sushi</button>
+        <button class="vibe" aria-pressed="false" data-food="Burgers"><em>🍔</em>Burgers</button>
+        <button class="vibe" aria-pressed="false" data-food="Pasta"><em>🍝</em>Pasta</button>
+        <button class="vibe" aria-pressed="false" data-food="Tacos"><em>🌮</em>Tacos</button>
+        <button class="vibe" aria-pressed="false" data-food="Ramen"><em>🍜</em>Ramen</button>
+      </div>
+      <button class="btn ghost" id="spinBtn" type="button">🎲 can't decide? spin it</button>
+      <div class="spacer"></div>
+      <button class="btn wide" id="foodNext" disabled>locked in →</button>
+    </section>
+
+    <!-- 5 -->
+    <section class="step" id="step-fee" hidden>
+      <div class="tile">🧾</div>
+      <h1 id="feeTitle">One small fee</h1>
+      <p class="sub" id="feeSub">to confirm your acceptance, please complete the following transaction. totally normal. everyone does this.</p>
+      <div class="invoice">
+        <div class="row"><span class="name">Date Agreement™</span><span class="price" id="price">$4.99</span></div>
+        <p class="fine" id="fine">one-time fee · non-refundable · absolutely worth it</p>
+      </div>
+      <div class="spacer"></div>
+      <div class="payfield" id="payfield">
+        <button class="btn wide" id="payBtn">pay $4.99 &amp; confirm 🥹</button>
+      </div>
+      <button class="btn ghost" id="backBtn" type="button">go back</button>
+    </section>
+
+    <!-- 6 -->
+    <section class="step" id="step-done" hidden>
+      <h1>Glad you didn't say no. Be ready by 6, I'm coming to get you 🚗</h1>
+      <div class="receipt">
+        <div class="head"><span>Date Agreement™</span><span id="ticketNo">no. 0000</span></div>
+        <dl>
+          <dt>When</dt><dd id="rWhen">—</dd>
+          <dt>Food</dt><dd id="rFood">—</dd>
+          <dt>Certainty</dt><dd id="rSure">—</dd>
+          <dt>Refusals</dt><dd id="rNo">—</dd>
+        </dl>
+        <div class="total"><span>Total due</span><span>one (1) date</span></div>
+        <div class="stamp" id="stamp">SEALED</div>
+      </div>
+      <div class="sigbox">
+        <span class="label">Sign here to make it official</span>
+        <canvas class="sigpad" id="sigpad"></canvas>
+        <div class="sigrow">
+          <span id="sigHint">draw your signature ✍️</span>
+          <button class="linkbtn" id="sigClear" type="button">clear</button>
+        </div>
+      </div>
+      <p class="ps">P.S. normal people text. I made a website, during lunch, for you. no big deal.</p>
+      <div class="spacer"></div>
+      <button class="btn wide" id="acceptBtn" disabled>ok I accept 🥰</button>
+    </section>
+
+  </div>
+</main>
+
+<p class="footnote" id="footnote">no fees, no data, no escape · <button id="makeOwn" type="button">send this to someone</button></p>
+
+<div class="maker" id="maker" hidden>
+  <span class="label">Put their name on it</span>
+  <div class="rowx">
+    <input id="toName" type="text" maxlength="24" placeholder="their name" aria-label="Their name">
+    <button class="btn" id="copyBtn" type="button">copy link</button>
+  </div>
+  <p class="fine" style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:9px 0 0;" id="copyNote">makes a personalised link. nothing is saved anywhere.</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------------- sound ---------------- */
+  var AC = window.AudioContext || window.webkitAudioContext;
+  var actx = null, soundOn = true;
+  function ensureAudio(){
+    if (!AC) return null;
+    if (!actx) { try { actx = new AC(); } catch(e){ return null; } }
+    if (actx.state === "suspended") actx.resume();
+    return actx;
+  }
+  function tone(freq, dur, type, vol, glideTo){
+    if (!soundOn) return;
+    var c = ensureAudio(); if (!c) return;
+    var o = c.createOscillator(), g = c.createGain();
+    o.type = type || "sine";
+    o.frequency.setValueAtTime(freq, c.currentTime);
+    if (glideTo) o.frequency.exponentialRampToValueAtTime(glideTo, c.currentTime + dur);
+    g.gain.setValueAtTime(0.0001, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(vol || 0.08, c.currentTime + 0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+    o.connect(g); g.connect(c.destination);
+    o.start(); o.stop(c.currentTime + dur + 0.02);
+  }
+  function chord(notes, dur, vol){ notes.forEach(function(n,i){ setTimeout(function(){ tone(n, dur, "triangle", vol || 0.06); }, i * 80); }); }
+  var sfx = {
+    dodge: function(){ tone(520, .16, "square", .05, 220); },
+    pop:   function(){ tone(660, .09, "triangle", .07); },
+    tick:  function(){ tone(880, .04, "square", .03); },
+    bark:  function(){ tone(300, .09, "sawtooth", .05, 180); },
+    yes:   function(){ chord([523, 659, 784], .3, .07); },
+    thunk: function(){ tone(140, .22, "sine", .12, 90); },
+    win:   function(){ chord([523, 659, 784, 1047], .45, .08); }
+  };
+  function buzz(ms){ if (navigator.vibrate) try{ navigator.vibrate(ms); }catch(e){} }
+  var soundBtn = $("soundBtn");
+  soundBtn.addEventListener("click", function(){
+    soundOn = !soundOn;
+    soundBtn.textContent = soundOn ? "sound on" : "sound off";
+    soundBtn.setAttribute("aria-pressed", String(soundOn));
+    if (soundOn) sfx.pop();
+  });
+
+  /* ---------------- personalise ---------------- */
+  var params = new URLSearchParams(location.search);
+  var who = (params.get("to") || "").trim().slice(0, 24);
+  if (who) $("askTitle").textContent = "Will you go on a date with me, " + who + "?";
+
+  /* ---------------- ambient hearts ---------------- */
+  if (!reduced){
+    var bg = $("heartsBg"), frag = document.createDocumentFragment();
+    for (var i = 0; i < 14; i++){
+      var s = document.createElement("span");
+      s.textContent = "♥";
+      s.style.left = (Math.random()*100).toFixed(2) + "%";
+      s.style.top = (100 + Math.random()*40).toFixed(2) + "%";
+      s.style.fontSize = (10 + Math.random()*16).toFixed(0) + "px";
+      s.style.animationDuration = (11 + Math.random()*12).toFixed(1) + "s";
+      s.style.animationDelay = (-Math.random()*20).toFixed(1) + "s";
+      frag.appendChild(s);
+    }
+    bg.appendChild(frag);
+  }
+
+  /* ---------------- steps ---------------- */
+  var STEPS = [["ask","the hard part"],["yes","genuine shock"],["when","logistics"],
+               ["food","the important bit"],["fee","fine print"],["done","see you at 6"]];
+  var rail = $("rail");
+  STEPS.forEach(function(){ rail.appendChild(document.createElement("i")); });
+  var bars = rail.querySelectorAll("i"), stepno = $("stepno"), current = 0;
+  bars[0].classList.add("on");
+
+  function go(id){
+    var idx = -1;
+    for (var i = 0; i < STEPS.length; i++) if (STEPS[i][0] === id) idx = i;
+    if (idx < 0) return;
+    $("step-" + STEPS[current][0]).hidden = true;
+    current = idx;
+    var el = $("step-" + id);
+    el.hidden = false;
+    el.style.animation = "none"; void el.offsetWidth; el.style.animation = "";
+    for (var j = 0; j < bars.length; j++) bars[j].classList.toggle("on", j <= idx);
+    stepno.textContent = "Step " + (idx+1) + " of " + STEPS.length + " — " + STEPS[idx][1];
+    sfx.pop();
+    window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+  }
+
+  /* ---------------- step 1: the dog ---------------- */
+  var pet = $("pet"), bubble = $("bubble"), bubbleTimer = null;
+  var DOG_LINES = [
+    "psst. he's been practising this all week.",
+    "he rewrote this button four times.",
+    "I've heard a LOT about you.",
+    "just say yes, I'm begging (literally).",
+    "the no button is rigged. don't tell him I said that.",
+    "there is no wrong answer. there is one answer.",
+    "he already picked the restaurant.",
+    "woof. that means yes in my language."
+  ];
+  var dogIdx = 0;
+  function say(text, ms){
+    bubble.textContent = text;
+    bubble.classList.add("show");
+    clearTimeout(bubbleTimer);
+    bubbleTimer = setTimeout(function(){ bubble.classList.remove("show"); }, ms || 2600);
+  }
+  pet.addEventListener("click", function(){
+    dogIdx = (dogIdx + 1) % DOG_LINES.length;
+    say(DOG_LINES[dogIdx]);
+    pet.classList.remove("wiggle"); void pet.offsetWidth; pet.classList.add("wiggle");
+    sfx.bark(); buzz(8);
+  });
+
+  /* ---------------- step 1: the escaping button ----------------
+     Readability rules applied:
+       - no flee before intent (tight 55px radius, and only after the first real "no")
+       - 480ms cooldown so it can never rapid-fire teleport
+       - hops 90-180px with spring easing, never to the far corner
+       - it NEVER turns into a yes; it eventually just leaves               */
+  var playfield = $("playfield"), yesBtn = $("yesBtn"), noBtn = $("noBtn"), hint = $("hint");
+  var askTitle = $("askTitle"), askSub = $("askSub");
+  var TAUNTS = ["still no","no?","nope","not happening","are you sure?","seriously?",
+                "ouch 😭","you can't catch me","ok bye 👋"];
+  var hops = 0, loose = false, gone = false, pleaded = false, cooling = false;
+  var leanTimer = null, tx = 0, ty = 0, rot = 0;
+
+  function paintNo(){
+    noBtn.style.transform = "translate(" + tx.toFixed(1) + "px," + ty.toFixed(1) + "px) rotate(" + rot + "deg)";
+  }
+  function lockField(){
+    if (loose) return;
+    var pf = playfield.getBoundingClientRect(), nb = noBtn.getBoundingClientRect();
+    playfield.style.height = pf.height + "px";
+    noBtn.style.left = (nb.left - pf.left) + "px";
+    noBtn.style.top  = (nb.top - pf.top) + "px";
+    noBtn.classList.add("loose");
+    loose = true;
+  }
+  function overlaps(x,y,w,h,r,pad){
+    return !(x + w + pad < r.x || x > r.x + r.w + pad || y + h + pad < r.y || y > r.y + r.h + pad);
+  }
+
+  /* stage 1 - it only flinches away. still fully clickable. */
+  function lean(px, py){
+    if (pleaded || gone) return;
+    var r = noBtn.getBoundingClientRect();
+    var dx = (r.left + r.width/2) - px, dy = (r.top + r.height/2) - py;
+    var m = Math.sqrt(dx*dx + dy*dy) || 1;
+    tx = (dx/m) * 20; ty = (dy/m) * 12; rot = dx > 0 ? 7 : -7;
+    paintNo();
+    clearTimeout(leanTimer);
+    leanTimer = setTimeout(function(){ tx = 0; ty = 0; rot = 0; paintNo(); }, 750);
+  }
+
+  /* stage 2 - a real, trackable hop */
+  function hop(px, py){
+    if (gone || cooling) return;
+    cooling = true;
+    setTimeout(function(){ cooling = false; }, 480);
+    lockField();
+    tx = 0; ty = 0; rot = 0; paintNo();
+
+    var pf = playfield.getBoundingClientRect(), nb = noBtn.getBoundingClientRect(), yb = yesBtn.getBoundingClientRect();
+    var yes = { x: yb.left - pf.left, y: yb.top - pf.top, w: yb.width, h: yb.height };
+    var cx = nb.left - pf.left, cy = nb.top - pf.top;
+    var maxX = Math.max(0, pf.width - nb.width), maxY = Math.max(0, pf.height - nb.height);
+    var from = { x: (px || cx) - pf.left, y: (py || cy) - pf.top };
+
+    var best = null, bestScore = -1;
+    for (var t = 0; t < 60; t++){
+      var ang = Math.random() * Math.PI * 2, dist = 90 + Math.random() * 90;
+      var x = Math.max(0, Math.min(maxX, cx + Math.cos(ang) * dist));
+      var y = Math.max(0, Math.min(maxY, cy + Math.sin(ang) * dist));
+      var moved = Math.sqrt((x-cx)*(x-cx) + (y-cy)*(y-cy));
+      if (moved < 55) continue;
+      if (overlaps(x, y, nb.width, nb.height, yes, 14)) continue;
+      var ddx = (x + nb.width/2) - from.x, ddy = (y + nb.height/2) - from.y;
+      var score = ddx*ddx + ddy*ddy;
+      if (score > bestScore){ bestScore = score; best = { x:x, y:y }; }
+    }
+    if (!best) best = { x: Math.random()*maxX, y: Math.random()*maxY };
+    noBtn.style.left = best.x + "px";
+    noBtn.style.top  = best.y + "px";
+
+    hops++;
+    sfx.dodge(); buzz(10);
+    noBtn.textContent = TAUNTS[Math.min(hops, TAUNTS.length - 1)];
+    yesBtn.style.transform = "scale(" + Math.min(1 + hops * 0.05, 1.5) + ")";
+    hint.textContent = "it ran away " + hops + (hops === 1 ? " time" : " times") + " · yes is the only real button";
+    if (hops === 3) say("he coded it that way. I watched him.", 2600);
+    if (hops >= 7) leaveForGood();
+  }
+
+  /* it leaves. it does NOT become a yes. */
+  function leaveForGood(){
+    gone = true;
+    say("and there it goes.", 3000);
+    sfx.thunk();
+    setTimeout(function(){
+      noBtn.classList.add("poof");
+      setTimeout(function(){
+        noBtn.remove();
+        playfield.style.height = "";
+        hint.textContent = "the no button has left the chat. only one option now ♥";
+      }, 380);
+    }, 220);
+  }
+
+  /* the first "no" is a real, landable click - you get to press it */
+  function plead(){
+    pleaded = true;
+    clearTimeout(leanTimer);
+    tx = 0; ty = 0; rot = 0; paintNo();
+    askTitle.textContent = "…ok. can I ask one more time?";
+    askSub.textContent = "I heard you. I'm choosing not to process it yet.";
+    noBtn.textContent = "still no";
+    hint.textContent = "fair warning: that button has lost its nerve";
+    say("he is not great at rejection.", 3200);
+    sfx.thunk(); buzz(22);
+  }
+
+  noBtn.addEventListener("pointerenter", function(e){
+    if (e.pointerType !== "mouse" || gone) return;
+    pleaded ? hop(e.clientX, e.clientY) : lean(e.clientX, e.clientY);
+  });
+  noBtn.addEventListener("pointerleave", function(){
+    if (pleaded || gone) return;
+    clearTimeout(leanTimer); tx = 0; ty = 0; rot = 0; paintNo();
+  });
+  noBtn.addEventListener("pointerdown", function(e){
+    if (gone) return;
+    if (!pleaded) return;          // first press is allowed to land
+    e.preventDefault();
+    hop(e.clientX, e.clientY);
+  });
+  noBtn.addEventListener("click", function(){
+    if (gone) return;
+    if (!pleaded) plead();
+  });
+  noBtn.addEventListener("focus", function(){ if (pleaded && !gone) hop(); });
+  playfield.addEventListener("pointermove", function(e){
+    if (!pleaded || gone || cooling || e.pointerType !== "mouse") return;
+    var r = noBtn.getBoundingClientRect();
+    var dx = e.clientX - (r.left + r.width/2), dy = e.clientY - (r.top + r.height/2);
+    if (dx*dx + dy*dy < 3000) hop(e.clientX, e.clientY);   // ~55px, not 95px
+  });
+
+  function accept(){ sfx.yes(); buzz([12,40,12]); go("yes"); }
+  yesBtn.addEventListener("click", accept);
+
+  /* ---------------- step 2: the certainty slider ---------------- */
+  var sure = $("sure"), gauge = $("gauge"), gaugeNote = $("gaugeNote"), sureNext = $("sureNext");
+  var sureVal = 0, rigging = false, lastTick = 0;
+  function noteFor(v){
+    if (v === 0) return "drag it. how sure are you?";
+    if (v < 25) return "…ok. wow.";
+    if (v < 50) return "we can work with this";
+    if (v < 80) return "getting warmer";
+    if (v < 100) return "so close, keep going";
+    return "PERFECT. no notes.";
+  }
+  function paintSure(v){
+    sureVal = v;
+    sure.style.setProperty("--pct", v + "%");
+    gauge.textContent = v + "%";
+    gaugeNote.textContent = noteFor(v);
+    sureNext.disabled = v < 100;
+    if (v === 100) sureNext.textContent = "okay okay! →";
+  }
+  sure.addEventListener("input", function(){
+    var v = +sure.value;
+    if (v !== lastTick){ lastTick = v; if (v % 4 === 0) sfx.tick(); }
+    paintSure(v);
+  });
+  function rigSlider(){
+    if (rigging || sureVal >= 100) return;
+    rigging = true;
+    gaugeNote.textContent = "…the slider is rigged, sorry";
+    var v = sureVal;
+    var id = setInterval(function(){
+      v = Math.min(100, v + 3);
+      sure.value = v; paintSure(v);
+      if (v % 12 === 0) sfx.tick();
+      if (v >= 100){ clearInterval(id); rigging = false; sfx.yes(); buzz(20); gaugeNote.textContent = "PERFECT. no notes."; }
+    }, 22);
+  }
+  sure.addEventListener("change", function(){ setTimeout(rigSlider, 420); });
+  sureNext.addEventListener("click", function(){ go("when"); });
+  paintSure(0);
+
+  /* ---------------- step 3: when ---------------- */
+  var dayInput = $("dayInput"), timeInput = $("timeInput"), whenNext = $("whenNext"), whenRead = $("whenRead");
+  var today = new Date(); today.setHours(0,0,0,0);
+  function iso(d){
+    return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  }
+  dayInput.min = iso(today);
+
+  $("chips").addEventListener("click", function(e){
+    var c = e.target.closest(".chip"); if (!c) return;
+    var d = new Date(today), spec = c.dataset.days;
+    if (spec === "0") d = new Date(today);
+    else if (spec === "1") d.setDate(d.getDate() + 1);
+    else {
+      var target = spec === "fri" ? 5 : 6;
+      var delta = (target - d.getDay() + 7) % 7 || 7;
+      d.setDate(d.getDate() + delta);
+    }
+    dayInput.value = iso(d);
+    document.querySelectorAll(".chip").forEach(function(x){ x.setAttribute("aria-pressed", String(x === c)); });
+    sfx.pop(); buzz(8);
+    checkWhen();
+  });
+
+  function prettyDate(v){
+    if (!v) return "";
+    var p = v.split("-"), d = new Date(+p[0], +p[1]-1, +p[2]);
+    return d.toLocaleDateString(undefined, { weekday:"short", month:"short", day:"numeric" });
+  }
+  function checkWhen(){
+    var has = dayInput.value && timeInput.value;
+    whenNext.disabled = !has;
+    if (!dayInput.value){ whenRead.textContent = ""; return; }
+    var p = dayInput.value.split("-"), d = new Date(+p[0], +p[1]-1, +p[2]);
+    var days = Math.round((d - today) / 86400000);
+    var away = days <= 0 ? "TONIGHT?? okay okay I'll shower" :
+               days === 1 ? "tomorrow. I have 1 day to panic." :
+               "that's " + days + " days to overthink my outfit";
+    whenRead.textContent = prettyDate(dayInput.value) + (timeInput.value ? " · " + timeInput.value : "") + " — " + away;
+  }
+  dayInput.addEventListener("change", function(){
+    document.querySelectorAll(".chip").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+    checkWhen();
+  });
+  timeInput.addEventListener("change", function(){ sfx.pop(); checkWhen(); });
+  whenNext.addEventListener("click", function(){ go("food"); });
+
+  /* ---------------- step 4: food + roulette ---------------- */
+  var food = "", foodNext = $("foodNext"), spinBtn = $("spinBtn");
+  var tiles = Array.prototype.slice.call(document.querySelectorAll(".vibe"));
+  function selectFood(btn){
+    tiles.forEach(function(v){ v.setAttribute("aria-pressed", String(v === btn)); v.classList.remove("lit"); });
+    food = btn.dataset.food;
+    foodNext.disabled = false;
+    foodNext.textContent = food.toLowerCase() + " it is →";
+  }
+  $("vibes").addEventListener("click", function(e){
+    var b = e.target.closest(".vibe"); if (!b || spinning) return;
+    selectFood(b); sfx.pop(); buzz(8);
+  });
+  var spinning = false;
+  spinBtn.addEventListener("click", function(){
+    if (spinning) return;
+    spinning = true; spinBtn.textContent = "spinning…"; foodNext.disabled = true;
+    tiles.forEach(function(v){ v.setAttribute("aria-pressed","false"); });
+    var i = Math.floor(Math.random()*tiles.length), delay = 60, steps = 16 + Math.floor(Math.random()*6);
+    (function hop(n){
+      tiles.forEach(function(v){ v.classList.remove("lit"); });
+      tiles[i % tiles.length].classList.add("lit");
+      sfx.tick();
+      i++;
+      if (n <= 0){
+        var picked = tiles[(i - 1) % tiles.length];
+        tiles.forEach(function(v){ v.classList.remove("lit"); });
+        selectFood(picked);
+        spinning = false;
+        spinBtn.textContent = "🎲 spin again";
+        sfx.yes(); buzz(20);
+        return;
+      }
+      delay *= 1.14;
+      setTimeout(function(){ hop(n - 1); }, delay);
+    })(steps);
+  });
+  foodNext.addEventListener("click", function(){ go("fee"); });
+
+  /* ---------------- step 5: the "fee" ---------------- */
+  var payBtn = $("payBtn"), payfield = $("payfield"), priceEl = $("price"), backBtn = $("backBtn");
+  var payDodges = 0, paid = false;
+  backBtn.addEventListener("mouseenter", function(){ backBtn.textContent = "there is no going back"; });
+  backBtn.addEventListener("click", function(){ backBtn.textContent = "there is no going back"; sfx.dodge(); });
+
+  function payFlee(){
+    var pf = payfield.getBoundingClientRect(), b = payBtn.getBoundingClientRect();
+    if (!payBtn.classList.contains("loose")){
+      payfield.style.height = pf.height + "px";
+      payBtn.style.width = b.width + "px";
+      payBtn.style.left = "0px"; payBtn.style.top = "0px";
+      payBtn.classList.add("loose");
+    }
+    payBtn.style.left = (Math.random() * Math.max(1, pf.width - b.width)) + "px";
+    payBtn.style.top = (Math.random() * 10) + "px";
+    payDodges++;
+    payBtn.textContent = payDodges === 1 ? "wait, really? 😬" : "last chance to not do this";
+    sfx.dodge(); buzz(12);
+  }
+  payBtn.addEventListener("pointerdown", function(e){
+    if (paid || payDodges >= 2) return;
+    e.preventDefault(); payFlee();
+  });
+  payBtn.addEventListener("click", function(){
+    if (payDodges < 2) return;
+    if (paid){ fillReceipt(); go("done"); return; }
+    paid = true;
+    payBtn.disabled = true; payBtn.textContent = "processing…";
+    var fakes = ["$49.99","$499","$4,999","$0.00"], n = 0;
+    var spin = setInterval(function(){
+      priceEl.textContent = fakes[n];
+      n < 3 ? sfx.tick() : sfx.thunk();
+      if (++n === fakes.length){
+        clearInterval(spin);
+        $("feeTitle").textContent = "…okay there's no fee";
+        $("feeSub").textContent = "I just wanted to see if you'd actually click it. you would have. noted forever.";
+        $("fine").textContent = "charge reversed · dignity not refunded · still worth it";
+        payBtn.disabled = false;
+        payBtn.textContent = "I can't believe you →";
+      }
+    }, 340);
+  });
+
+  /* ---------------- step 6: receipt + signature ---------------- */
+  function fillReceipt(){
+    var when = "you'll let me know";
+    if (dayInput.value){
+      when = prettyDate(dayInput.value);
+      if (timeInput.value) when += " · " + timeInput.value;
+    }
+    $("rWhen").textContent = when;
+    $("rFood").textContent = food || "dealer's choice";
+    $("rSure").textContent = sureVal + "% (verified)";
+    $("rNo").textContent = (!pleaded && hops === 0) ? "0 — instant yes, incredible"
+      : (hops === 0 ? "1 — politely declined, then reconsidered" : (hops + 1) + " — the button fled " + hops + "x");
+    $("ticketNo").textContent = "no. " + String(1000 + Math.floor(Math.random()*8999));
+  }
+
+  var pad = $("sigpad"), pctx = pad.getContext("2d"), inked = false, drawing = false, last = null;
+  function sizePad(){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var r = pad.getBoundingClientRect();
+    if (!r.width) return;
+    var data = inked ? pad.toDataURL() : null;
+    pad.width = r.width * dpr; pad.height = r.height * dpr;
+    pctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    pctx.lineWidth = 2.6; pctx.lineCap = "round"; pctx.lineJoin = "round";
+    pctx.strokeStyle = getComputedStyle(document.body).getPropertyValue("--ink") || "#000";
+    if (data){ var img = new Image(); img.onload = function(){ pctx.drawImage(img, 0, 0, r.width, r.height); }; img.src = data; }
+  }
+  function padPos(e){
+    var r = pad.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  }
+  pad.addEventListener("pointerdown", function(e){
+    e.preventDefault();
+    sizePadOnce();
+    drawing = true; last = padPos(e);
+    pad.setPointerCapture(e.pointerId);
+    if (!inked){ inked = true; pad.classList.add("inked"); $("sigHint").textContent = "looks legally binding to me"; $("acceptBtn").disabled = false; sfx.pop(); }
+  });
+  pad.addEventListener("pointermove", function(e){
+    if (!drawing) return;
+    var p = padPos(e);
+    pctx.beginPath(); pctx.moveTo(last.x, last.y); pctx.lineTo(p.x, p.y); pctx.stroke();
+    last = p;
+  });
+  ["pointerup","pointercancel","pointerleave"].forEach(function(ev){
+    pad.addEventListener(ev, function(){ drawing = false; });
+  });
+  var padSized = false;
+  function sizePadOnce(){ if (!padSized){ sizePad(); padSized = true; } }
+  $("sigClear").addEventListener("click", function(){
+    pctx.clearRect(0, 0, pad.width, pad.height);
+    inked = false; pad.classList.remove("inked");
+    $("sigHint").textContent = "draw your signature ✍️";
+    $("acceptBtn").disabled = true;
+    sfx.dodge();
+  });
+  window.addEventListener("resize", function(){ if (padSized) sizePad(); });
+
+  /* ---------------- confetti ---------------- */
+  var canvas = $("confetti"), ctx = canvas.getContext("2d");
+  function sizeCanvas(){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = innerWidth*dpr; canvas.height = innerHeight*dpr;
+    canvas.style.width = innerWidth + "px"; canvas.style.height = innerHeight + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  sizeCanvas();
+  addEventListener("resize", sizeCanvas);
+  function burst(){
+    if (reduced) return;
+    var colors = ["#D94A72","#FF6E96","#8E6ED0","#F0A6BC","#B4801F"], bits = [];
+    for (var i = 0; i < 90; i++){
+      bits.push({ x: innerWidth/2 + (Math.random()-.5)*140, y: innerHeight*0.45,
+                  vx:(Math.random()-.5)*9, vy:-6-Math.random()*9, r:5+Math.random()*7,
+                  a:Math.random()*Math.PI, s:(Math.random()-.5)*.25, c: colors[(Math.random()*colors.length)|0] });
+    }
+    var start = performance.now();
+    (function frame(now){
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      bits.forEach(function(b){
+        b.vy += .24; b.x += b.vx; b.y += b.vy; b.a += b.s;
+        ctx.save(); ctx.translate(b.x, b.y); ctx.rotate(b.a);
+        ctx.fillStyle = b.c; ctx.font = b.r*2 + "px serif";
+        ctx.textAlign = "center"; ctx.textBaseline = "middle";
+        ctx.fillText("♥", 0, 0); ctx.restore();
+      });
+      if (now - start < 4200) requestAnimationFrame(frame);
+      else ctx.clearRect(0, 0, innerWidth, innerHeight);
+    })(start);
+  }
+
+  var acceptBtn = $("acceptBtn");
+  acceptBtn.addEventListener("click", function(){
+    burst(); sfx.win(); buzz([15,50,15,50,30]);
+    $("stamp").classList.add("on");
+    acceptBtn.textContent = "it's a date 🎉";
+    acceptBtn.disabled = true;
+    $("footnote").firstChild.nodeValue = who ? ("see you at 6, " + who + " · ") : "see you at 6 · ";
+  });
+
+  /* ---------------- make your own ---------------- */
+  var maker = $("maker");
+  $("makeOwn").addEventListener("click", function(){
+    maker.hidden = !maker.hidden;
+    if (!maker.hidden){ $("toName").focus(); sfx.pop(); }
+  });
+  $("copyBtn").addEventListener("click", function(){
+    var n = $("toName").value.trim().slice(0, 24);
+    var url = location.origin + location.pathname + (n ? "?to=" + encodeURIComponent(n) : "");
+    var note = $("copyNote");
+    function ok(){ note.textContent = "copied. now go be brave."; sfx.yes(); }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(ok, function(){ note.textContent = url; });
+    } else { note.textContent = url; }
+  });
+})();
+</script>
+
+</body>
+</html>
